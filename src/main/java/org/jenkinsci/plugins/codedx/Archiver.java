@@ -14,7 +14,10 @@
  */
 package org.jenkinsci.plugins.codedx;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Level;

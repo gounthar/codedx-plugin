@@ -18,7 +18,6 @@ import com.codedx.api.client.CodeDxClient;
 import com.codedx.api.client.CodeDxClientException;
 import com.codedx.api.client.Job;
 import com.codedx.api.client.StartAnalysisResponse;
-import com.codedx.util.CodeDxVersion;
 
 import java.io.IOException;
 import java.io.PrintStream;

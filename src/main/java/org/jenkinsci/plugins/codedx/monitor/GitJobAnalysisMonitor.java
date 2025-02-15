@@ -14,12 +14,14 @@
  */
 package org.jenkinsci.plugins.codedx.monitor;
 
-import com.codedx.api.client.*;
+import com.codedx.api.client.CodeDxClient;
+import com.codedx.api.client.CodeDxClientException;
+import com.codedx.api.client.Job;
+import com.codedx.api.client.StartAnalysisResponse;
 import hudson.AbortException;
 
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.List;
 
 public class GitJobAnalysisMonitor implements AnalysisMonitor {
 	StartAnalysisResponse originalAnalysisResponse, newAnalysisResponse;

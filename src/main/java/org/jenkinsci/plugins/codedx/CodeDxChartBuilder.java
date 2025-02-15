@@ -15,7 +15,6 @@
 package org.jenkinsci.plugins.codedx;
 
 import hudson.model.AbstractBuild;
-import hudson.model.Build;
 import hudson.model.Run;
 import hudson.util.ChartUtil.NumberOnlyBuildLabel;
 import hudson.util.DataSetBuilder;

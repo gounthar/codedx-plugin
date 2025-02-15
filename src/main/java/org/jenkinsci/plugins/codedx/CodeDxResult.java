@@ -14,10 +14,7 @@
  */
 package org.jenkinsci.plugins.codedx;
 
-import java.io.Serializable;
 import java.util.Map;
-
-import hudson.model.AbstractBuild;
 
 import hudson.model.Run;
 import org.jenkinsci.plugins.codedx.model.CodeDxReportStatistics;

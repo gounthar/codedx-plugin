@@ -14,9 +14,7 @@
  */
 package org.jenkinsci.plugins.codedx;
 
-import hudson.model.AbstractBuild;
 import hudson.model.Action;
-import java.io.Serializable;
 import java.util.*;
 
 import hudson.model.Build;
