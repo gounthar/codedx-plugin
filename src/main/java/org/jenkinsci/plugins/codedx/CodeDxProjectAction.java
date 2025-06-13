@@ -25,8 +25,8 @@ import java.util.Map;
 import hudson.util.Graph;
 import org.jenkinsci.plugins.codedx.model.StatisticGroup;
 import org.jfree.chart.JFreeChart;
-import org.kohsuke.stapler.StaplerRequest;
-import org.kohsuke.stapler.StaplerResponse;
+import org.kohsuke.stapler.StaplerRequest2;
+import org.kohsuke.stapler.StaplerResponse2;
 
 import com.codedx.api.client.Filter;
 
@@ -87,7 +87,7 @@ public class CodeDxProjectAction implements Action {
 	 * @param response Stapler response
 	 * @throws IOException in case of an error
 	 */
-	public void doIndex(final StaplerRequest request, final StaplerResponse response) throws IOException {
+	public void doIndex(final StaplerRequest2 request, final StaplerResponse2 response) throws IOException {
 		Run<?, ?> build = getLastFinishedBuild();
 		if (build != null) {
 			response.sendRedirect2(String.format("../%d/%s", build.getNumber(), CodeDxBuildAction.URL_NAME));
@@ -154,7 +154,7 @@ public class CodeDxProjectAction implements Action {
 	 * @param response Stapler response
 	 * @throws IOException in case of an error
 	 */
-	public void doSeverityTrend(final StaplerRequest request, final StaplerResponse response) throws IOException {
+	public void doSeverityTrend(final StaplerRequest2 request, final StaplerResponse2 response) throws IOException {
 		Run<?,?> lastBuild = this.getLastFinishedBuild();
 		final CodeDxBuildAction lastAction = lastBuild.getAction(CodeDxBuildAction.class);
 
@@ -183,7 +183,7 @@ public class CodeDxProjectAction implements Action {
 	 * @param response Stapler response
 	 * @throws IOException in case of an error
 	 */
-	public void doStatusTrend(final StaplerRequest request, final StaplerResponse response) throws IOException {
+	public void doStatusTrend(final StaplerRequest2 request, final StaplerResponse2 response) throws IOException {
 		Run<?,?> lastBuild = this.getLastFinishedBuild();
 		final CodeDxBuildAction lastAction = lastBuild.getAction(CodeDxBuildAction.class);
 

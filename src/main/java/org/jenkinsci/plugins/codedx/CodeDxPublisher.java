@@ -39,7 +39,7 @@ import jenkins.model.Jenkins;
 import jenkins.tasks.SimpleBuildStep;
 import net.sf.json.JSONObject;
 
-import org.acegisecurity.Authentication;
+import org.springframework.security.core.Authentication;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -55,7 +55,7 @@ import org.kohsuke.stapler.verb.POST;
 
 import javax.annotation.Nonnull;
 import javax.net.ssl.SSLHandshakeException;
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -983,7 +983,7 @@ public class CodeDxPublisher extends Recorder implements SimpleBuildStep {
 		}
 
 		@Override
-		public boolean configure(final StaplerRequest req, final JSONObject formData) throws FormException {
+		public boolean configure(final StaplerRequest2 req, final JSONObject formData) throws FormException {
 			// To persist global configuration information,
 			// set that to properties and call save().
 			// ^Can also use req.bindJSON(this, formData);
@@ -994,7 +994,7 @@ public class CodeDxPublisher extends Recorder implements SimpleBuildStep {
 		}
 
 		@Override
-		public Publisher newInstance(StaplerRequest req, JSONObject formData) throws FormException {
+		public Publisher newInstance(StaplerRequest2 req, JSONObject formData) throws FormException {
 			return super.newInstance(req, formData);
 		}
 	}
